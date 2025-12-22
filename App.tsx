@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -47,6 +48,8 @@ const App: React.FC = () => {
         </main>
 
         <Footer />
+        {/* Vercel Web Analytics for React (no route support in plain React) */}
+        <Analytics />
       </div>
     </Router>
   );

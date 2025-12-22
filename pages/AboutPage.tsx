@@ -52,9 +52,9 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Get Started - Vercel Speed Insights */}
+        {/* Speed Insights */}
         <div className="mb-20">
-          <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-3">Get Started</h2>
+          <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-3">Speed Insights</h2>
           <p className="text-slate-600 dark:text-slate-400">To start collecting performance metrics, follow these steps.</p>
 
           <div className="mt-8 bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm">
@@ -88,9 +88,9 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Get Started - Vercel Analytics */}
+        {/* Web Analytics */}
         <div className="mb-20">
-          <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-3">Get Started</h2>
+          <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-3">Web Analytics</h2>
           <p className="text-slate-600 dark:text-slate-400">To start counting visitors and page views, follow these steps.</p>
 
           <div className="mt-8 bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm">

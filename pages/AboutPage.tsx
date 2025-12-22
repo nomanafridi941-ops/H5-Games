@@ -104,6 +104,8 @@ const AboutPage: React.FC = () => {
               <div className="space-y-3">
                 <div className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">npm</div>
                 <pre className="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-auto text-sm"><code>npm i @vercel/analytics</code></pre>
+                <div className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">pnpm</div>
+                <pre className="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-auto text-sm"><code>pnpm i @vercel/analytics</code></pre>
               </div>
             </div>
 
@@ -113,6 +115,31 @@ const AboutPage: React.FC = () => {
               <p className="text-slate-600 dark:text-slate-400 mb-4">Import and use the <span className="font-semibold">&lt;Analytics /&gt;</span> React component into your app's layout.</p>
               <pre className="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-auto text-sm"><code>import { Analytics } from "@vercel/analytics/next"</code></pre>
               <p className="text-slate-600 dark:text-slate-400 mt-3">For full examples and further reference, please refer to our documentation.</p>
+              {/* Full example (Next.js /app) */}
+              <div className="mt-6">
+                <div className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Root layout example (Next.js /app)</div>
+                <pre className="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-auto text-sm">
+                  <code>{`import { Analytics } from '@vercel/analytics/next';
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <title>Next.js</title>
+      </head>
+      <body>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
+}`}</code>
+                </pre>
+              </div>
             </div>
 
             {/* Step 3 */}

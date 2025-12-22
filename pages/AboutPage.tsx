@@ -88,6 +88,42 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
 
+        {/* Get Started - Vercel Analytics */}
+        <div className="mb-20">
+          <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-3">Get Started</h2>
+          <p className="text-slate-600 dark:text-slate-400">To start counting visitors and page views, follow these steps.</p>
+
+          <div className="mt-8 bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Next.js</h3>
+
+            {/* Step 1 */}
+            <div className="mb-10">
+              <div className="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">1. Install our package</div>
+              <p className="text-slate-600 dark:text-slate-400 mb-4">Start by installing <span className="font-semibold">@vercel/analytics</span> in your existing project.</p>
+
+              <div className="space-y-3">
+                <div className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">npm</div>
+                <pre className="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-auto text-sm"><code>npm i @vercel/analytics</code></pre>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="mb-10">
+              <div className="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">2. Add the React component</div>
+              <p className="text-slate-600 dark:text-slate-400 mb-4">Import and use the <span className="font-semibold">&lt;Analytics /&gt;</span> React component into your app's layout.</p>
+              <pre className="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-auto text-sm"><code>import { Analytics } from "@vercel/analytics/next"</code></pre>
+              <p className="text-slate-600 dark:text-slate-400 mt-3">For full examples and further reference, please refer to our documentation.</p>
+            </div>
+
+            {/* Step 3 */}
+            <div>
+              <div className="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">3. Deploy &amp; Visit your Site</div>
+              <p className="text-slate-600 dark:text-slate-400">Deploy your changes and visit the deployment to collect your page views.</p>
+              <p className="text-slate-600 dark:text-slate-400 mt-3">If you don't see data after 30 seconds, please check for content blockers and try to navigate between pages on your site.</p>
+            </div>
+          </div>
+        </div>
+
         <div className="bg-indigo-600 rounded-[3rem] p-12 text-center text-white">
           <h2 className="text-3xl font-black mb-6">Ready to jump into the action?</h2>
           <p className="text-indigo-100 mb-10 max-w-xl mx-auto">

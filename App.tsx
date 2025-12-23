@@ -22,25 +22,17 @@ const ScrollToTop = () => {
 };
 
 const App: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
+  // Force dark mode only
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-      document.body.classList.remove('bg-slate-50');
-      document.body.classList.add('bg-slate-900');
-    } else {
-      document.documentElement.classList.remove('dark');
-      document.body.classList.remove('bg-slate-900');
-      document.body.classList.add('bg-slate-50');
-    }
-  }, [darkMode]);
+    document.documentElement.classList.add('dark');
+    document.body.classList.add('bg-slate-900');
+  }, []);
 
   return (
     <Router>
       <ScrollToTop />
-      <div className={`min-h-screen flex flex-col transition-colors duration-300 ${darkMode ? 'dark text-slate-100' : 'text-slate-900'}`}>
-        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <div className="min-h-screen flex flex-col transition-colors duration-300 dark text-slate-100 bg-slate-900">
+        <Navbar />
         
         <main className="flex-grow">
           <Routes>

@@ -29,6 +29,18 @@
       .dark ::-webkit-scrollbar-thumb {
         background: #475569;
       }
+      
+      /* Hide GameDistribution ads and overlays */
+      iframe[src*="gamedistribution"] .gdsdk__advertisement,
+      iframe[src*="gamedistribution"] .gdsdk__advertisement__container,
+      iframe[src*="gamedistribution"] .ad-container,
+      iframe[src*="gamedistribution"] #advertisement,
+      iframe[src*="gamedistribution"] .advertisement {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
     </style>
   <script type="importmap">
 {

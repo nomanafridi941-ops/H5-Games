@@ -10,7 +10,7 @@ interface GameCardProps {
 const GameCard: React.FC<GameCardProps> = ({ game }) => {
   return (
     <Link 
-      to={`/game/${game.id}`}
+      to={`/game/${game.slug}`}
       className="group relative flex flex-col bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-slate-100 dark:border-slate-700"
     >
       {/* Thumbnail Container */}

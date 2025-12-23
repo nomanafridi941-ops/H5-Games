@@ -5,18 +5,18 @@ import GameCard from '../components/GameCard';
 import { GAMES } from '../constants';
 
 const GamePlayPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const [loading, setLoading] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const game = GAMES.find(g => g.id === id);
+  const game = GAMES.find(g => g.slug === slug);
 
   useEffect(() => {
     // Simulate game assets loading
     setLoading(true);
     const timer = setTimeout(() => setLoading(false), 1500);
     return () => clearTimeout(timer);
-  }, [id]);
+  }, [slug]);
 
   if (!game) {
     return (

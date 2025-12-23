@@ -1,6 +1,17 @@
 
 import { Category, Game, CategoryData } from './types';
 
+// Helper to generate URL-friendly slugs from game titles
+const generateSlug = (title: string): string => {
+  return title
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '');
+};
+
 export const CATEGORIES: CategoryData[] = [
   { id: Category.ALL, title: 'All Games', icon: '🎮', color: 'bg-indigo-100 text-indigo-600' },
   { id: Category.PUZZLE, title: 'Puzzle', icon: '🧠', color: 'bg-amber-100 text-amber-600' },
@@ -15,6 +26,7 @@ export const CATEGORIES: CategoryData[] = [
 export const GAMES: Game[] = [
   {
     id: '11',
+    slug: 'farming-missions-2023',
     title: 'Farming Missions 2023',
     category: Category.CASUAL,
     thumbnail: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEwokxz6k-IM6w_nbnBgB7pepcrwWXZsHGfjNdZP_nBAsIDICS2JBAZYJ2Z79tiAI0SaxTtgDJdVdKR5KseOx70dL4iqID7J0TnarUh1j5frJe5vM__w7-gbqxfYd16QXBlfUVZkReuEK7eIgoy2PuZ2PsWZ3DWP6xtlhHFlYal8B487m6fuwSBG32UII/w400-h300-c/771a810925114617a4c550204dc521f9-512x384.jpeg',
@@ -27,6 +39,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '12',
+    slug: 'crazy-2-player-moto-racing',
     title: 'Crazy 2 Player Moto Racing',
     category: Category.RACING,
     thumbnail: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhI-BX5UWG6SO1eS4UAbL8uspV1BX5E2EodSEqy9yibCL9hwXPu5H3_z5heJLbqaE4zEkqoWOSes-Yvgyoh6ZgGhT0Jm5dHixhGqWoi9hm04ij1pyMvcvj6_tPBfD1zQusS6v9VAy6In38kD4GqwrkV9Vg94NC2fnuO4IEMzTZ8CRBhnawEyDNKL6tUBhE/w400-h300-c/a3aa13bec4934ed39db9e3b7cbede84e-512x512.jpeg',
@@ -40,6 +53,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '13',
+    slug: 'drive-dead-3d',
     title: 'Drive Dead 3D',
     category: Category.ACTION,
     thumbnail: 'https://img.gamedistribution.com/7261cb65f14a4dc29f0395cae8edcb65-512x384.jpeg',
@@ -52,6 +66,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '14',
+    slug: 'extreme-blur-race',
     title: 'Extreme Blur Race',
     category: Category.RACING,
     thumbnail: 'https://img.gamedistribution.com/5bca303e796146f0b45aefa4d031fafc-1280x720.jpeg',
@@ -65,6 +80,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '15',
+    slug: 'super-metal-wars',
     title: 'Super Metal Wars',
     category: Category.ACTION,
     thumbnail: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYOxvTMS8Yy0uQqHFj_Onqmii5C67z36YU8iU2KcFYVciq9DGONqwre-PILYkCwO63ZAgAp7reUUVtVWnL2Il3C2FUUZP56YsPsiCR-m8XiklEneXIFQghYA7qLboiAKSPN4MLzohARoOO716q_SMYRiMKQA42xf6jFH2D8o6XsDpJHdaAYXU9TGE0OI8/w400-h300-c/1d092c908828431b90be263fd48cca8a-512x384.jpeg',
@@ -77,6 +93,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '16',
+    slug: 'stunt-rider',
     title: 'Stunt Rider',
     category: Category.SPORTS,
     thumbnail: 'https://img.gamedistribution.com/98ddff27fcb349bea90758188b384e31-512x384.jpg',
@@ -89,6 +106,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '17',
+    slug: 'gt-cars-mega-ramps',
     title: 'GT Cars Mega Ramps',
     category: Category.RACING,
     thumbnail: 'https://img.gamedistribution.com/24113c58bbd347569687d35efc5ef900-512x384.jpg',
@@ -102,6 +120,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '18',
+    slug: 'turbo-car-track',
     title: 'Turbo Car Track',
     category: Category.RACING,
     thumbnail: 'https://img.gamedistribution.com/a198643d3153409b9c51fc908f170eea-512x512.jpg',
@@ -114,6 +133,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '19',
+    slug: 'roof-car-stunt',
     title: 'Roof Car Stunt',
     category: Category.RACING,
     thumbnail: 'https://img.gamedistribution.com/6748193367394537a181141e69a97f6b-512x384.jpg',
@@ -126,6 +146,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '20',
+    slug: 'monster-truck-crush',
     title: 'Monster Truck Crush',
     category: Category.RACING,
     thumbnail: 'https://img.gamedistribution.com/1efe3c86190b495b9eb167e74d37cc7a-512x384.jpg',
@@ -139,6 +160,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '21',
+    slug: 'battle-arena-race-to-win',
     title: 'Battle Arena Race to Win',
     category: Category.ACTION,
     thumbnail: 'https://img.gamedistribution.com/4597f4ca77b4438e9ca675e4a76bf655-512x384.jpg',
@@ -151,6 +173,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '22',
+    slug: 'trial-xtreme',
     title: 'Trial Xtreme',
     category: Category.SPORTS,
     thumbnail: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEwokxz6k-IM6w_nbnBgB7pepcrwWXZsHGfjNdZP_nBAsIDICS2JBAZYJ2Z79tiAI0SaxTtgDJdVdKR5KseOx70dL4iqID7J0TnarUh1j5frJe5vM__w7-gbqxfYd16QXBlfUVZkReuEK7eIgoy2PuZ2PsWZ3DWP6xtlhHFlYal8B487m6fuwSBG32UII/w400-h300-c/771a810925114617a4c550204dc521f9-512x384.jpeg',
@@ -162,6 +185,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '23',
+    slug: 'parking-fury-3d-beach-city-2',
     title: 'Parking Fury 3D: Beach City 2',
     category: Category.CASUAL,
     thumbnail: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJau7fcQGhACjJGuLM60uovK8MGRxYs75l4qLrM7shnS7FwCg5sPZhLcAbYsaHF8qcZQ5QqwKgHDAIn1348cn4CvPsSJ1u3rWnT6L7i_lsMCfQNLMfItvmwyB9k4pD2EPLSNB4tP5pQ_TWqawTjOlr0oDshYbdznjm16YJPBhLvuqKRuq7rnrEtKnxdsY/w400-h300-c/2.jpg',
@@ -174,6 +198,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '24',
+    slug: 'drive-race-crash',
     title: 'Drive, Race, Crash',
     category: Category.RACING,
     thumbnail: 'https://img.gamedistribution.com/e153af5a19ef412299d2858132c02351-512x384.jpg',
@@ -187,6 +212,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '25',
+    slug: 'squid-game-3d',
     title: 'Squid Game 3D',
     category: Category.ACTION,
     thumbnail: 'https://img.gamedistribution.com/b92ebd73ad794263880597673306afb5-512x512.jpg',
@@ -200,6 +226,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '26',
+    slug: 'gun-shooting-range',
     title: 'Gun Shooting Range',
     category: Category.ARCADE,
     thumbnail: 'https://img.gamedistribution.com/bbd8d949e6a447249457ed0c94fb46df-512x384.jpg',
@@ -212,6 +239,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '27',
+    slug: 'gta-car-rush',
     title: 'GTA Car Rush',
     category: Category.RACING,
     thumbnail: 'https://img.gamedistribution.com/f064a3245cf14155b8683fe10511523e-512x384.jpg',
@@ -225,6 +253,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '28',
+    slug: 'cs-upgrade-gun',
     title: 'CS: Upgrade Gun',
     category: Category.ACTION,
     thumbnail: 'https://img.gamedistribution.com/2307b3227c9d4e74a9d7091a392ed1c0-512x512.jpg?v=3',
@@ -238,6 +267,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '29',
+    slug: 'my-garden-journey',
     title: 'My Garden Journey',
     category: Category.PUZZLE,
     thumbnail: 'https://img.gamedistribution.com/8d958e45c13a46c38e62805648e7d801-512x512.jpg',
@@ -250,6 +280,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '30',
+    slug: 'monkey-bubble-defense',
     title: 'Monkey Bubble Defense',
     category: Category.PUZZLE,
     thumbnail: 'https://img.gamedistribution.com/a9d35516635d487d9fb95bb5d95c42e5-512x384.jpg',
@@ -262,6 +293,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '31',
+    slug: 'moto-x3m-pool-party',
     title: 'Moto X3M Pool Party',
     category: Category.RACING,
     thumbnail: 'https://static.keygames.com/6/113806/96456/672x448/moto-x3m-pool-party.webp',
@@ -275,6 +307,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '32',
+    slug: 'bubble-warriors',
     title: 'Bubble Warriors',
     category: Category.PUZZLE,
     thumbnail: 'https://img.gamedistribution.com/15546480f39546508bb7a9082c0a89f1-512x384.jpeg',
@@ -287,6 +320,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '33',
+    slug: 'tappus-free-kick-challenge',
     title: 'Tappus Free Kick Challenge',
     category: Category.SPORTS,
     thumbnail: 'https://img.gamedistribution.com/faf4da9b48b14610bf16bf770f4d04e7-512x512.jpg',
@@ -299,6 +333,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '34',
+    slug: 'pool-clash-8-ball-billiards-snooker',
     title: 'Pool Clash: 8 Ball Billiards Snooker',
     category: Category.SPORTS,
     thumbnail: 'https://img.gamedistribution.com/63b796a4fa5c4e4398fabb69383e6de1-512x512.jpeg',
@@ -311,6 +346,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '35',
+    slug: 'archers-random',
     title: 'Archers Random',
     category: Category.SPORTS,
     thumbnail: 'https://img.gamedistribution.com/f4055ea8c0794a50badf82d7ce837eaa-512x384.jpg',
@@ -324,6 +360,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '36',
+    slug: 'marble-bubble-legend',
     title: 'Marble Bubble Legend',
     category: Category.PUZZLE,
     thumbnail: 'https://img.gamedistribution.com/54c0012499194a2a8417409422158d0a-512x512.jpg',
@@ -336,6 +373,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '37',
+    slug: 'table-tennis-open',
     title: 'Table Tennis Open',
     category: Category.SPORTS,
     thumbnail: 'https://img.gamedistribution.com/4ffc798ffa08450fa23ceb8935f0ae6d-512x384.jpg',
@@ -348,6 +386,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '38',
+    slug: 'solitaire-klondike',
     title: 'Solitaire Klondike',
     category: Category.CASUAL,
     thumbnail: 'https://playpager.com/app-images/1x1/klondike-solitaire-1x1.jpg',
@@ -360,6 +399,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '39',
+    slug: 'queens-royal-sudoku-puzzle',
     title: 'Queens Royal: Sudoku Puzzle',
     category: Category.PUZZLE,
     thumbnail: 'https://img.gamedistribution.com/60f0c13b4bbc412eb0c3bb9479f10fc4-512x384.jpg',
@@ -373,6 +413,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '40',
+    slug: 'car-stunt-rider',
     title: 'Car Stunt Rider',
     category: Category.RACING,
     thumbnail: 'https://img.gamedistribution.com/79eeaafa334e4979be1dc219156386d0-512x512.jpeg',
@@ -385,6 +426,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '41',
+    slug: 'chiron-city-driver',
     title: 'Chiron City Driver',
     category: Category.RACING,
     thumbnail: 'https://img.gamedistribution.com/1b5315fd207a446daf4cbf9df971e5b0-512x512.jpg',
@@ -397,6 +439,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '42',
+    slug: 'crazy-traffic-racer',
     title: 'Crazy Traffic Racer',
     category: Category.RACING,
     thumbnail: 'https://img.gamedistribution.com/d0b8e5ba257d4f888738a7ec722443f1-512x384.jpg',
@@ -410,6 +453,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '43',
+    slug: 'epic-stunts-pvp-3d',
     title: 'Epic Stunts PvP 3D',
     category: Category.RACING,
     thumbnail: 'https://img.gamedistribution.com/a75b82d28b4b4083bbc8ad4394570d97-512x384.jpg',
@@ -422,6 +466,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '44',
+    slug: 'paper-wars-battles-and-upgrades',
     title: 'Paper Wars: Battles and Upgrades',
     category: Category.ACTION,
     thumbnail: 'https://img.gamedistribution.com/49994d4fd8aa4a218b8d3ed8837a4700-512x512.jpg',
@@ -434,6 +479,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '45',
+    slug: 'car-out-jam',
     title: 'Car Out Jam',
     category: Category.PUZZLE,
     thumbnail: 'https://img.gamedistribution.com/1c49dc059eb248369dc39f45a14846e7-512x512.jpg',
@@ -446,6 +492,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '46',
+    slug: 'wave-dash',
     title: 'Wave Dash',
     category: Category.ARCADE,
     thumbnail: 'https://img.gamedistribution.com/bfd9e939e8cd458fbb03df9b598959f4-512x384.jpg',
@@ -459,6 +506,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '47',
+    slug: 'obby-rainbow-tower',
     title: 'Obby Rainbow Tower',
     category: Category.CASUAL,
     thumbnail: 'https://img.gamedistribution.com/57de0fa8b9fb4df783e7eb8248ac5e5a-512x384.jpg',
@@ -472,6 +520,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '48',
+    slug: '2-player-battle',
     title: '2 Player Battle',
     category: Category.ARCADE,
     thumbnail: 'https://img.gamedistribution.com/4625c660923c42b8a5c8e4d2fbdc98ee-512x384.jpg',
@@ -485,6 +534,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '49',
+    slug: 'urus-city-driver',
     title: 'Urus City Driver',
     category: Category.RACING,
     thumbnail: 'https://img.gamedistribution.com/a328bd1f75004f8b912aa34dc451fb4c-512x384.jpg',
@@ -497,6 +547,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '50',
+    slug: 'geometry-vibes-x-arrow',
     title: 'Geometry Vibes X-Arrow',
     category: Category.ARCADE,
     thumbnail: 'https://img.gamedistribution.com/99423a2819a14804a12f30557091d567-512x384.jpg',
@@ -510,6 +561,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '51',
+    slug: 'mojicon-winter-connect',
     title: 'Mojicon Winter Connect',
     category: Category.PUZZLE,
     thumbnail: 'https://img.gamedistribution.com/577a7ad3269f4fdc974a34624d733d3a-512x384.jpg',
@@ -522,6 +574,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '52',
+    slug: 'royal-garden-match-2',
     title: 'Royal Garden Match 2',
     category: Category.PUZZLE,
     thumbnail: 'https://img.gamedistribution.com/8c1bfbc5d6814c8aa3061061e050b8b4-512x384.jpg',
@@ -534,6 +587,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '53',
+    slug: 'radical-rappelling',
     title: 'Radical Rappelling',
     category: Category.SPORTS,
     thumbnail: 'https://img.gamedistribution.com/46faa9ffc990467088b2197ef067044b-512x384.jpg',
@@ -547,6 +601,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '54',
+    slug: 'merge-christmas',
     title: 'Merge Christmas',
     category: Category.CASUAL,
     thumbnail: 'https://img.gamedistribution.com/e903dd30b25b4b3eb53640f7bb1edfe1-512x384.jpg',
@@ -559,6 +614,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '55',
+    slug: 'hexa-stack-christmas',
     title: 'Hexa Stack Christmas',
     category: Category.PUZZLE,
     thumbnail: 'https://img.gamedistribution.com/f026d2bf0d8a4e72a14d0db48bbd7bf1-512x384.jpg',
@@ -571,6 +627,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '56',
+    slug: 'hexa-tap-away',
     title: 'Hexa Tap Away',
     category: Category.PUZZLE,
     thumbnail: 'https://img.gamedistribution.com/ef4b392680554564abe1a3d3917a754b-512x384.jpeg',
@@ -583,6 +640,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '57',
+    slug: 'crowd-evolution',
     title: 'Crowd Evolution',
     category: Category.ARCADE,
     thumbnail: 'https://img.gamedistribution.com/9bde41f232834eff9ea81554ecee8279-512x384.jpg',
@@ -596,6 +654,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '58',
+    slug: 'love-colors',
     title: 'Love Colors',
     category: Category.CASUAL,
     thumbnail: 'https://img.gamedistribution.com/6ae19d94241144ba901af8e2590c00e1-512x384.jpg',
@@ -608,6 +667,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '59',
+    slug: 'floof-my-pet-house',
     title: 'Floof My Pet House',
     category: Category.KIDS,
     thumbnail: 'https://img.gamedistribution.com/fab4ba7adaf04d8a92905989e85b55c7-512x384.jpg',
@@ -620,6 +680,7 @@ export const GAMES: Game[] = [
   },
   {
     id: '60',
+    slug: 'hill-racing-egg-drop',
     title: 'Hill Racing: Egg Drop',
     category: Category.RACING,
     thumbnail: 'https://img.gamedistribution.com/3e88933d9b3d4e0b95b2356d978c32e1-512x384.jpg',

@@ -12,6 +12,7 @@ export enum Category {
 
 export interface Game {
   id: string;
+  slug: string;
   title: string;
   category: Category;
   thumbnail: string;

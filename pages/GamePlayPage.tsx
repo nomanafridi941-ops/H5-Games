@@ -72,8 +72,7 @@ const GamePlayPage: React.FC = () => {
                   title={game.title}
                   allowFullScreen
                   loading="lazy"
-                  sandbox="allow-same-origin allow-scripts allow-forms allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-presentation allow-downloads"
-                  referrerPolicy="no-referrer-when-downgrade"
+                  allow="autoplay; fullscreen; payment; cross-origin-isolated"
                 />
               ) : (
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950 text-white text-center px-8">

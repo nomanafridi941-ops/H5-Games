@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Image */}
-          <div className="hidden md:block relative">
+          <div className="block relative">
             <div className="relative">
               {/* Glow Effect */}
               <div className="absolute -inset-4 bg-gradient-to-r from-amber-300/20 to-indigo-300/20 rounded-3xl blur-xl"></div>
@@ -70,7 +70,12 @@ const Hero: React.FC = () => {
               <img 
                 src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?auto=format&fit=crop&q=80&w=800&h=700" 
                 alt="H5 Games Gaming Experience" 
-                className="relative rounded-3xl shadow-2xl object-cover w-full aspect-square transform hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                onError={(e) => {
+                  const img = e.currentTarget;
+                  img.src = 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800&h=700';
+                }}
+                className="relative rounded-3xl shadow-2xl object-cover w-full aspect-[4/3] md:aspect-square transform hover:scale-105 transition-transform duration-500"
               />
               
               {/* Floating Badge */}

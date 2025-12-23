@@ -1,170 +1,139 @@
-
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="bg-slate-900 min-h-screen py-16">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6">
-            Instant Fun, <span className="text-indigo-600">Everywhere.</span>
+    <div className="min-h-screen bg-slate-900 text-white">
+      {/* Hero Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <h1 className="text-5xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600">
+            About PlayHub
           </h1>
-          <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
-            PlayHub is the world's leading platform for high-quality browser-based gaming.
+          <p className="text-xl text-slate-300 leading-relaxed">
+            PlayHub is your ultimate destination for free, high-performance HTML5 browser games. We believe gaming should be accessible, fast, and fun—without downloads, installations, or compromises.
           </p>
         </div>
+      </section>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-20">
-          <div className="space-y-6">
-            <h2 className="text-3xl font-black text-slate-900 dark:text-white">Our Vision</h2>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
-              We believe that gaming should be accessible to everyone, regardless of their hardware. By focusing on modern Web technologies (HTML5), we've built a platform that removes the friction of massive downloads and long installation times.
-            </p>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              Whether you have 5 minutes between meetings or 5 hours on a weekend, PlayHub provides instant gratification through high-quality interactive experiences.
-            </p>
-          </div>
-          <div className="relative">
-            <img src="https://picsum.photos/seed/vision/600/400" alt="Vision" className="rounded-3xl shadow-2xl" />
-            <div className="absolute -bottom-6 -right-6 bg-amber-400 p-8 rounded-3xl shadow-xl hidden md:block">
-              <span className="text-4xl font-black text-indigo-900">500+</span>
-              <p className="text-indigo-900 font-bold text-sm">Active Games</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-20">
-          <div className="p-8 bg-white dark:bg-slate-800 rounded-3xl text-center shadow-sm">
-            <div className="text-4xl mb-4">🚀</div>
-            <h3 className="text-xl font-bold mb-2">High Speed</h3>
-            <p className="text-slate-500 dark:text-slate-400 text-sm">Optimized assets for instant loading on any connection.</p>
-          </div>
-          <div className="p-8 bg-white dark:bg-slate-800 rounded-3xl text-center shadow-sm">
-            <div className="text-4xl mb-4">📱</div>
-            <h3 className="text-xl font-bold mb-2">Mobile First</h3>
-            <p className="text-slate-500 dark:text-slate-400 text-sm">Seamless experience on smartphones, tablets and PCs.</p>
-          </div>
-          <div className="p-8 bg-white dark:bg-slate-800 rounded-3xl text-center shadow-sm">
-            <div className="text-4xl mb-4">🛡️</div>
-            <h3 className="text-xl font-bold mb-2">Safe & Free</h3>
-            <p className="text-slate-500 dark:text-slate-400 text-sm">No accounts or hidden fees. Just click and play safely.</p>
-          </div>
-        </div>
-
-        {/* Speed Insights */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-3">Speed Insights</h2>
-          <p className="text-slate-600 dark:text-slate-400">To start collecting performance metrics, follow these steps.</p>
-
-          <div className="mt-8 bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Next.js</h3>
-
-            {/* Step 1 */}
-            <div className="mb-10">
-              <div className="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">1. Install our package</div>
-              <p className="text-slate-600 dark:text-slate-400 mb-4">Start by installing <span className="font-semibold">@vercel/speed-insights</span> in your existing project.</p>
-
-              <div className="space-y-3">
-                <div className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">npm</div>
-                <pre className="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-auto text-sm"><code>npm i @vercel/speed-insights</code></pre>
-              </div>
-            </div>
-
-            {/* Step 2 */}
-            <div className="mb-10">
-              <div className="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">2. Add the Next.js component</div>
-              <p className="text-slate-600 dark:text-slate-400 mb-4">Import and use the <span className="font-semibold">&lt;SpeedInsights /&gt;</span> Next.js component into your app's layout or your main file.</p>
-              <pre className="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-auto text-sm"><code>import { SpeedInsights } from "@vercel/speed-insights/next"</code></pre>
-              <p className="text-slate-600 dark:text-slate-400 mt-3">For full examples and further reference, please refer to our documentation.</p>
-            </div>
-
-            {/* Step 3 */}
+      {/* Mission Section */}
+      <section className="py-16 px-4 bg-slate-800/50">
+        <div className="container mx-auto max-w-4xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">3. Deploy &amp; Visit your Site</div>
-              <p className="text-slate-600 dark:text-slate-400">Deploy your changes and visit the deployment to collect your first data points.</p>
-              <p className="text-slate-600 dark:text-slate-400 mt-3">If you don't see data after 30 seconds, please check for content blockers and try to navigate between pages on your site.</p>
+              <h2 className="text-3xl font-black mb-6">Our Mission</h2>
+              <p className="text-slate-300 mb-4">
+                We're dedicated to bringing the best gaming experience directly to your browser. No waiting, no installations, no hassle—just instant, world-class entertainment at your fingertips.
+              </p>
+              <p className="text-slate-300">
+                Our curated collection of 60+ games spans every genre, from casual puzzles to intense racing challenges, ensuring there's something for every player.
+              </p>
+            </div>
+            <div className="bg-indigo-600/20 border border-indigo-500/30 rounded-2xl p-8 text-center">
+              <div className="text-6xl mb-4">🎮</div>
+              <h3 className="text-2xl font-bold text-indigo-300">Play Instantly</h3>
+              <p className="text-slate-400 mt-2">No downloads. No delays. Pure gaming.</p>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Web Analytics */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-3">Web Analytics</h2>
-          <p className="text-slate-600 dark:text-slate-400">To start counting visitors and page views, follow these steps.</p>
-
-          <div className="mt-8 bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Next.js</h3>
-
-            {/* Step 1 */}
-            <div className="mb-10">
-              <div className="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">1. Install our package</div>
-              <p className="text-slate-600 dark:text-slate-400 mb-4">Start by installing <span className="font-semibold">@vercel/analytics</span> in your existing project.</p>
-
-              <div className="space-y-3">
-                <div className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">npm</div>
-                <pre className="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-auto text-sm"><code>npm i @vercel/analytics</code></pre>
-                <div className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">pnpm</div>
-                <pre className="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-auto text-sm"><code>pnpm i @vercel/analytics</code></pre>
-              </div>
+      {/* Features Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl font-black mb-12 text-center">Why Choose PlayHub?</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-indigo-500 transition-colors">
+              <div className="text-4xl mb-4">⚡</div>
+              <h3 className="text-xl font-bold mb-3">Lightning Fast</h3>
+              <p className="text-slate-400">
+                Optimized games load instantly in your browser with minimal latency and maximum performance.
+              </p>
             </div>
 
-            {/* Step 2 */}
-            <div className="mb-10">
-              <div className="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">2. Add the React component</div>
-              <p className="text-slate-600 dark:text-slate-400 mb-4">Import and use the <span className="font-semibold">&lt;Analytics /&gt;</span> React component into your app's layout.</p>
-              <pre className="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-auto text-sm"><code>import { Analytics } from "@vercel/analytics/next"</code></pre>
-              <p className="text-slate-600 dark:text-slate-400 mt-3">For full examples and further reference, please refer to our documentation.</p>
-              {/* Full example (Next.js /app) */}
-              <div className="mt-6">
-                <div className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Root layout example (Next.js /app)</div>
-                <pre className="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-auto text-sm">
-                  <code>{`import { Analytics } from '@vercel/analytics/next';
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <head>
-        <title>Next.js</title>
-      </head>
-      <body>
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  );
-}`}</code>
-                </pre>
-              </div>
+            <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-indigo-500 transition-colors">
+              <div className="text-4xl mb-4">⭐</div>
+              <h3 className="text-xl font-bold mb-3">Carefully Curated</h3>
+              <p className="text-slate-400">
+                Every game is hand-picked and tested to ensure quality, fun factor, and engaging gameplay.
+              </p>
             </div>
 
-            {/* Step 3 */}
-            <div>
-              <div className="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">3. Deploy &amp; Visit your Site</div>
-              <p className="text-slate-600 dark:text-slate-400">Deploy your changes and visit the deployment to collect your page views.</p>
-              <p className="text-slate-600 dark:text-slate-400 mt-3">If you don't see data after 30 seconds, please check for content blockers and try to navigate between pages on your site.</p>
+            <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-indigo-500 transition-colors">
+              <div className="text-4xl mb-4">👥</div>
+              <h3 className="text-xl font-bold mb-3">Community Focused</h3>
+              <p className="text-slate-400">
+                Join thousands of players enjoying our diverse game collection and share your high scores.
+              </p>
+            </div>
+
+            <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-indigo-500 transition-colors">
+              <div className="text-4xl mb-4">🌐</div>
+              <h3 className="text-xl font-bold mb-3">Always Accessible</h3>
+              <p className="text-slate-400">
+                Play from any device, anytime, anywhere. No setup required—just click and play.
+              </p>
             </div>
           </div>
         </div>
+      </section>
 
-        <div className="bg-indigo-600 rounded-[3rem] p-12 text-center text-white">
-          <h2 className="text-3xl font-black mb-6">Ready to jump into the action?</h2>
-          <p className="text-indigo-100 mb-10 max-w-xl mx-auto">
-            Discover your next favorite game today. No sign-up required.
+      {/* Game Categories */}
+      <section className="py-16 px-4 bg-slate-800/50">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl font-black mb-8 text-center">Our Game Library</h2>
+          <p className="text-slate-300 text-center mb-8">
+            Explore games across multiple genres:
           </p>
-          <Link to="/" className="px-10 py-4 bg-white text-indigo-600 font-bold rounded-2xl hover:bg-indigo-50 transition-all hover:scale-105 inline-block">
-            Start Playing Now
-          </Link>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {['Puzzle', 'Racing', 'Action', 'Kids', 'Sports', 'Arcade', 'Casual', 'Strategy'].map((category) => (
+              <div key={category} className="bg-indigo-600/20 border border-indigo-500/30 rounded-xl p-4 text-center hover:bg-indigo-600/30 transition-colors">
+                <p className="text-indigo-300 font-bold">{category}</p>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="bg-slate-800 p-8 rounded-2xl">
+              <div className="text-4xl font-black text-indigo-400 mb-2">60+</div>
+              <p className="text-slate-400">Games Available</p>
+            </div>
+            <div className="bg-slate-800 p-8 rounded-2xl">
+              <div className="text-4xl font-black text-indigo-400 mb-2">8</div>
+              <p className="text-slate-400">Game Categories</p>
+            </div>
+            <div className="bg-slate-800 p-8 rounded-2xl">
+              <div className="text-4xl font-black text-indigo-400 mb-2">100%</div>
+              <p className="text-slate-400">Free to Play</p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-16 px-4 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 border-t border-b border-indigo-500/30">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl font-black mb-4">Have Questions?</h2>
+          <p className="text-slate-300 mb-8">
+            Get in touch with our support team or learn more about our services.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl font-bold transition-colors">
+              Contact Us
+            </a>
+            <a href="/" className="px-8 py-3 border-2 border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 rounded-xl font-bold transition-colors">
+              Back to Games
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
 
 export default AboutPage;
+

@@ -35,7 +35,7 @@ const ContactPage: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
             Contact Support
           </h1>
-          <p className="text-lg text-slate-500 dark:text-slate-400">
+          <p className="text-lg text-slate-700 dark:text-slate-400">
             Have questions or need help? We're here to assist you.
           </p>
         </div>
@@ -48,7 +48,7 @@ const ContactPage: React.FC = () => {
                 <span className="text-2xl">📧</span>
                 <span>Email</span>
               </h3>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-700 dark:text-slate-300">
                 For general inquiries:
                 <br />
                 <a href="mailto:support@h5gamestore.site" className="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">
@@ -62,7 +62,7 @@ const ContactPage: React.FC = () => {
                 <span className="text-2xl">🐛</span>
                 <span>Report Issues</span>
               </h3>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-700 dark:text-slate-300">
                 Found a bug or broken game?
                 <br />
                 <a href="mailto:bugs@h5gamestore.site" className="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">
@@ -76,7 +76,7 @@ const ContactPage: React.FC = () => {
                 <span className="text-2xl">🎮</span>
                 <span>Game Suggestions</span>
               </h3>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-700 dark:text-slate-300">
                 Recommend a game to add:
                 <br />
                 <a href="mailto:games@h5gamestore.site" className="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">
@@ -90,7 +90,7 @@ const ContactPage: React.FC = () => {
                 <span className="text-2xl">⏱️</span>
                 <span>Response Time</span>
               </h3>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-700 dark:text-slate-300">
                 We typically respond within 24-48 hours during business days.
               </p>
             </div>
@@ -190,7 +190,7 @@ const ContactPage: React.FC = () => {
               <h3 className="font-bold text-slate-900 dark:text-white mb-2">
                 Do I need an account to play games?
               </h3>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-700 dark:text-slate-300">
                 No! All games on H5 Games are completely free and require no sign-up or account creation.
               </p>
             </div>
@@ -199,7 +199,7 @@ const ContactPage: React.FC = () => {
               <h3 className="font-bold text-slate-900 dark:text-white mb-2">
                 Are the games safe to play?
               </h3>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-700 dark:text-slate-300">
                 Yes. All games are hosted through GameDistribution and are regularly reviewed for quality and safety.
               </p>
             </div>
@@ -208,7 +208,7 @@ const ContactPage: React.FC = () => {
               <h3 className="font-bold text-slate-900 dark:text-white mb-2">
                 Can I download games?
               </h3>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-700 dark:text-slate-300">
                 No downloads needed! All games play directly in your browser on desktop, tablet, or mobile.
               </p>
             </div>
@@ -217,7 +217,7 @@ const ContactPage: React.FC = () => {
               <h3 className="font-bold text-slate-900 dark:text-white mb-2">
                 Why is a game not loading?
               </h3>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-700 dark:text-slate-300">
                 Check your internet connection and try disabling ad blockers. If the issue persists,{' '}
                 <a href="mailto:bugs@h5gamestore.site" className="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">
                   report it to us
@@ -230,7 +230,7 @@ const ContactPage: React.FC = () => {
 
         {/* Additional Links */}
         <div className="mt-12 text-center space-y-3">
-          <p className="text-slate-600 dark:text-slate-300">
+          <p className="text-slate-700 dark:text-slate-300">
             Need more information?
           </p>
           <div className="flex flex-wrap justify-center gap-4">

@@ -14,7 +14,7 @@ const PrivacyPolicyPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="space-y-8 text-slate-600 dark:text-slate-300">
+        <div className="space-y-8 text-slate-700 dark:text-slate-300">
           <section>
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
               1. Introduction
@@ -100,7 +100,7 @@ const PrivacyPolicyPage: React.FC = () => {
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
               8. Contact Us
             </h2>
-            <p>
+            <p className="text-slate-700 dark:text-slate-300">
               If you have questions about this Privacy Policy or our privacy practices, please{' '}
               <Link to="/contact" className="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">
                 contact us
@@ -113,7 +113,7 @@ const PrivacyPolicyPage: React.FC = () => {
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
               9. Changes to This Policy
             </h2>
-            <p>
+            <p className="text-slate-700 dark:text-slate-300">
               We may update this Privacy Policy from time to time. Changes will be effective immediately upon posting to the website.
             </p>
           </section>

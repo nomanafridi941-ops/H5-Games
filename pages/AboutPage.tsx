@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 py-16 bg-slate-50 dark:bg-slate-900 rounded-3xl">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6">

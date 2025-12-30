@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .score {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        canvas {
+            border: 3px solid #333;
+            background: #000;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        
+        button:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pong</h1>
+        <div class="score">P1: <span id="p1Score">0</span> | P2: <span id="p2Score">0</span></div>
+        <canvas id="gameCanvas" width="600" height="400"></canvas>
+        <button onclick="startGame()">Start Game</button>
+        <p style="margin-top: 20px; color: #666; font-size: 0.9em;">P1: W/S | P2: Up/Down Arrow</p>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        const paddleWidth = 10;
+        const paddleHeight = 80;
+        const ballSize = 8;
+        
+        let p1 = {x: 10, y: canvas.height / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight, score: 0, velocity: 0};
+        let p2 = {x: canvas.width - paddleWidth - 10, y: canvas.height / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight, score: 0, velocity: 0};
+        let ball = {x: canvas.width / 2, y: canvas.height / 2, vx: 4, vy: 4, size: ballSize};
+        
+        let gameRunning = false;
+        let keys = {};
+        
+        function startGame() {
+            p1.score = 0;
+            p2.score = 0;
+            p1.y = canvas.height / 2 - paddleHeight / 2;
+            p2.y = canvas.height / 2 - paddleHeight / 2;
+            ball.x = canvas.width / 2;
+            ball.y = canvas.height / 2;
+            ball.vx = 4;
+            ball.vy = 4;
+            gameRunning = true;
+            document.getElementById('p1Score').textContent = p1.score;
+            document.getElementById('p2Score').textContent = p2.score;
+        }
+        
+        function update() {
+            if (!gameRunning) return;
+            
+            // Player 1 movement
+            if (keys['w'] && p1.y > 0) p1.y -= 5;
+            if (keys['s'] && p1.y < canvas.height - paddleHeight) p1.y += 5;
+            
+            // Player 2 movement
+            if (keys['ArrowUp'] && p2.y > 0) p2.y -= 5;
+            if (keys['ArrowDown'] && p2.y < canvas.height - paddleHeight) p2.y += 5;
+            
+            // Ball movement
+            ball.x += ball.vx;
+            ball.y += ball.vy;
+            
+            // Ball collision with top/bottom
+            if (ball.y - ball.size <= 0 || ball.y + ball.size >= canvas.height) {
+                ball.vy *= -1;
+                ball.y = Math.max(ball.size, Math.min(canvas.height - ball.size, ball.y));
+            }
+            
+            // Ball collision with paddles
+            if (ball.x - ball.size <= p1.x + p1.width &&
+                ball.y >= p1.y && ball.y <= p1.y + p1.height) {
+                ball.vx = Math.abs(ball.vx);
+                ball.x = p1.x + p1.width + ball.size;
+                let deltaY = ball.y - (p1.y + p1.height / 2);
+                ball.vy = deltaY / (p1.height / 2) * 4;
+            }
+            
+            if (ball.x + ball.size >= p2.x &&
+                ball.y >= p2.y && ball.y <= p2.y + p2.height) {
+                ball.vx = -Math.abs(ball.vx);
+                ball.x = p2.x - ball.size;
+                let deltaY = ball.y - (p2.y + p2.height / 2);
+                ball.vy = deltaY / (p2.height / 2) * 4;
+            }
+            
+            // Scoring
+            if (ball.x < 0) {
+                p2.score++;
+                document.getElementById('p2Score').textContent = p2.score;
+                resetBall();
+            }
+            if (ball.x > canvas.width) {
+                p1.score++;
+                document.getElementById('p1Score').textContent = p1.score;
+                resetBall();
+            }
+        }
+        
+        function resetBall() {
+            ball.x = canvas.width / 2;
+            ball.y = canvas.height / 2;
+            ball.vx = (Math.random() > 0.5 ? 1 : -1) * 4;
+            ball.vy = (Math.random() - 0.5) * 4;
+        }
+        
+        function draw() {
+            // Clear canvas
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw center line
+            ctx.strokeStyle = '#fff';
+            ctx.setLineDash([5, 5]);
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2, 0);
+            ctx.lineTo(canvas.width / 2, canvas.height);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            
+            // Draw paddles
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(p1.x, p1.y, p1.width, p1.height);
+            ctx.fillRect(p2.x, p2.y, p2.width, p2.height);
+            
+            // Draw ball
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        function gameLoop() {
+            update();
+            draw();
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            keys[e.key] = true;
+        });
+        
+        document.addEventListener('keyup', (e) => {
+            keys[e.key] = false;
+        });
+        
+        setInterval(gameLoop, 30);
+    </script>
+</body>
+</html>
